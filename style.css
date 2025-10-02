@@ -1,0 +1,71 @@
+:root {
+  --bg:#f4f7fb; --card:#fff; --accent:#4f46e5; --danger:#dc2626;
+  --success:#16a34a; --warning:#f59e0b; --muted:#6b7280;
+}
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+  margin: 0;
+  padding: 16px;
+}
+header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 16px;
+}
+h1 {
+  font-size: 1.6rem; margin: 0; color: var(--accent);
+}
+.controls button {
+  background: linear-gradient(135deg, var(--accent), #6366f1);
+  border: none; padding: 8px 12px; border-radius: 8px;
+  color: white; cursor: pointer; font-size: 0.9rem;
+  transition: transform 0.2s;
+}
+.controls button:hover { transform: scale(1.05); }
+.new-task {
+  background: var(--card);
+  padding: 16px; border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  margin-bottom: 16px;
+}
+.new-task h2 { margin: 0 0 10px 0; color: var(--accent); }
+.new-task input, .new-task textarea, .new-task select {
+  width: 100%; padding: 10px; margin-top: 6px;
+  border-radius: 8px; border: 1px solid #ddd;
+}
+.form-actions {
+  margin-top: 12px; display: flex; gap: 10px; justify-content: flex-end;
+}
+.form-actions button {
+  padding: 8px 14px; border: none; border-radius: 8px; cursor: pointer;
+}
+.form-actions button[type="submit"] { background: var(--success); color: white; }
+.form-actions #cancelBtn { background: var(--danger); color: white; }
+.filters {
+  display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap;
+}
+.filters input, .filters select {
+  padding: 8px; border-radius: 8px; border: 1px solid #ddd;
+}
+.tasks-list { display: flex; flex-direction: column; gap: 10px; }
+.task {
+  display: flex; gap: 12px;
+  background: var(--card);
+  padding: 12px; border-radius: 10px;
+  align-items: flex-start;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+.task:hover { transform: scale(1.02); }
+.task h3 { margin: 0; font-size: 1.1rem; }
+.taskMeta { color: var(--muted); font-size: 0.85rem; }
+.taskNotes { margin: 6px 0 0; }
+.task.completed { opacity: 0.6; text-decoration: line-through; }
+.task[data-priority="high"] { border-left: 6px solid var(--danger); }
+.task[data-priority="normal"] { border-left: 6px solid var(--warning); }
+.task[data-priority="low"] { border-left: 6px solid var(--success); }
+.task .right button {
+  background: transparent; border: none; cursor: pointer;
+  font-size: 1rem; color: var(--muted);
+}
+footer { margin-top: 20px; text-align: center; color: var(--muted); }
